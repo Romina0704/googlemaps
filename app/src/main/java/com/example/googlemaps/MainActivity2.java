@@ -121,10 +121,8 @@ public class MainActivity2 extends AppCompatActivity
         circulo = mapa.addCircle(circleOptions);
         Map<String, String> datos = new HashMap<String, String>();
         // The 'radio' parameter is not needed by the web service.
-        WebService ws = new WebService(
-                "https://turismo.quevedoenlinea.gob.ec/lugar_turistico/json_getlistadoMapa?lat=-1.0223057&lng=-79.4611302" + lat + "&lng=" + lng, datos,
-                MainActivity2.this, MainActivity2.this);
-        ws.execute("GET");
+        datos.put("lat", String.format("%.4f", lat));
+
     }
 
     @Override
